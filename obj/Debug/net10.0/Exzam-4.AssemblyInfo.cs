@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Exzam-4")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3a6e5353dc1f79bf0389da53c21f58928eb0848")]
 [assembly: System.Reflection.AssemblyProductAttribute("Exzam-4")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Exzam-4")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

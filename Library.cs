@@ -1,25 +1,62 @@
 namespace Exzam_4;
-public class Library:Book
+public class Library
 {
-List<string> list = new List<string>();
-public void AddBook(string book)
+List<Book> books = [];
+    public void AddBook(Book book)
     {
-        list.Add(book);
+        books.Add(book);
     }
-    public void DisplayBooks(string title)
+
+    public void DeleteBook(int Id)
     {
-        list.Add(title);
+        var a = books.Find(n => n.Id == Id);
+        if(a == null)
+        {
+            System.Console.WriteLine("Not found!");
+            return;
+        }
+        books.Remove(a);
     }
-    public void UpdateBook(string book)
+
+    public void DisplayBooks()
     {
-      
+        books.ForEach(n => System.Console.WriteLine(n.Author + " " + n.Tittle));
     }
-    public void DeleteBook(string title)
+
+    public void SearchBookByTittle(string Tittle)
     {
-         list.Remove(title);
+        var a = books.Find(m => m.Tittle == Tittle);
+        if(a == null)
+        {
+            System.Console.WriteLine("Not found!");
+            return;
+        }
+        System.Console.Write(a.Id + " ");
+        System.Console.Write(a.Author + " ");
+        System.Console.WriteLine(a.Tittle);
     }
-    public void SearchByTitle()
+
+    public void SearchByAuthor(string Author)
     {
-       
+        var a = books.FindAll(m => m.Author == Author);
+        if(a == null)
+        {
+            System.Console.WriteLine("Not found!");
+            return;
+        }
+        a.ForEach(n => System.Console.WriteLine(n.Author + " " + n.Tittle));
+    }
+
+    public void UpdateBook(Book book)
+    {
+        foreach (var item in books)
+        {
+            if(item.Id == book.Id)
+            {
+                item.Author = book.Author;
+                item.Tittle = book.Tittle;
+                return;
+            }
+        }
     }
 }
